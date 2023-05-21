@@ -12,6 +12,14 @@ psycopg2 = "*"
 django-cors-headers = "*"
 whitenoise = "*"
 python-dotenv = "*"
+django-extensions = "*"
+django-filter = "*"
+gunicorn = "*"
+markdown = "*"
+pycodestyle = "*"
+python-decouple = "*"
+python-dateutil = "*"
+tomli = "*"
 
 [dev-packages]
 

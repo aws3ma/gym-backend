@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 from datetime import timedelta
-from dotenv import load_dotenv, find_dotenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -28,7 +27,12 @@ SECRET_KEY = 'django-insecure-t+xv!v29ha%039^l0yw!c_p_fw(g)p!c_jb8ox^=2u0a@3^q09
 DEBUG = False
 
 ALLOWED_HOSTS = ["http://localhost:8100"]
-
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:4200',
+    'http://localhost:9876',
+    'http://192.168.1.16:9876'
+)
 
 # Application definition
 
@@ -54,9 +58,9 @@ REST_FRAMEWORK = {
 }
 
 MIDDLEWARE = [
-    "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     "corsheaders.middleware.CorsMiddleware",
+    # "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -65,7 +69,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = ["http://localhost:8100"]
 
 ROOT_URLCONF = 'gym.urls'
 
@@ -87,7 +90,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'gym.wsgi.application'
 
-# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STORAGES = {
+    # ...
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
@@ -108,13 +116,7 @@ DATABASES = {
     }
 }
 
-CORS_ORIGIN_ALLOW_ALL = False 
 
-# this allows cookie being passed cross domain    
-CORS_ALLOW_CREDENTIALS = True 
-
-DEBUG_PROPAGATE_EXCEPTIONS = True
-load_dotenv(find_dotenv())
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -150,12 +152,16 @@ AUTH_USER_MODEL = 'authentication.User'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'gym/static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+# Actual directory user files go to
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'gym/static/')
-# ]
+# URL used to access the media
+MEDIA_URL = '/media/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
