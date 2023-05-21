@@ -1,0 +1,267 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "gym",
+    "dateExported": "2023-05-21T10:44:56.126Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "d41f9cb9-2f0a-4145-828c-011b405e13fa",
+            "name": "account",
+            "containerId": "",
+            "created": "2023-05-21T10:23:32.962Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "aedd3391-4890-4c04-9ea2-22fb4e165a25",
+            "name": "bodybuilder",
+            "containerId": "",
+            "created": "2023-05-21T10:23:49.369Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "e060ff61-505c-47df-9517-83849f1301e9",
+            "name": "paiement",
+            "containerId": "",
+            "created": "2023-05-21T10:24:51.609Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "4025b04e-a0ec-443e-b0e1-906df593f853",
+            "colId": "9d775716-61fe-4688-b047-7d17655a0fbd",
+            "containerId": "d41f9cb9-2f0a-4145-828c-011b405e13fa",
+            "name": "signup",
+            "url": "http://127.0.0.1:8000/auth/signup",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-05-21T08:47:38.725Z",
+            "modified": "2023-05-21T10:23:35.111Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"password\": \"test\",\n  \"username\": \"test\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "14e8dab5-a358-4bcc-b36d-060306c5a50a",
+            "colId": "9d775716-61fe-4688-b047-7d17655a0fbd",
+            "containerId": "aedd3391-4890-4c04-9ea2-22fb4e165a25",
+            "name": "create",
+            "url": "/bodybuilder",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-05-21T10:22:00.745Z",
+            "modified": "2023-05-21T10:23:52.236Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"full_name\": \"Amin Ben Slimen\",\n  \"phone\":56789987\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "22f68511-58c9-46db-b439-8de2d9b511db",
+            "colId": "9d775716-61fe-4688-b047-7d17655a0fbd",
+            "containerId": "d41f9cb9-2f0a-4145-828c-011b405e13fa",
+            "name": "login",
+            "url": "/auth/token/get",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-05-21T09:23:26.007Z",
+            "modified": "2023-05-21T10:23:36.496Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"password\": \"test\",\n  \"username\": \"test\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "8ef55de4-2ae2-48c9-b5af-02eb3026adb2",
+            "colId": "9d775716-61fe-4688-b047-7d17655a0fbd",
+            "containerId": "aedd3391-4890-4c04-9ea2-22fb4e165a25",
+            "name": "get all",
+            "url": "/bodybuilder",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-05-21T10:23:14.305Z",
+            "modified": "2023-05-21T10:23:53.321Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6447d339-e29b-4272-b65e-5a75bf60f516",
+            "colId": "9d775716-61fe-4688-b047-7d17655a0fbd",
+            "containerId": "d41f9cb9-2f0a-4145-828c-011b405e13fa",
+            "name": "account details",
+            "url": "/auth/account",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-05-21T10:20:30.531Z",
+            "modified": "2023-05-21T10:23:37.731Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "64b80f37-2518-452f-b58b-b45c483178b4",
+            "colId": "9d775716-61fe-4688-b047-7d17655a0fbd",
+            "containerId": "aedd3391-4890-4c04-9ea2-22fb4e165a25",
+            "name": "get by id",
+            "url": "/bodybuilder?id=1",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-05-21T10:24:17.698Z",
+            "modified": "2023-05-21T10:24:33.317Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "1",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "59c6f0f5-aa5b-49c9-878a-44208fb37aa9",
+            "colId": "9d775716-61fe-4688-b047-7d17655a0fbd",
+            "containerId": "aedd3391-4890-4c04-9ea2-22fb4e165a25",
+            "name": "update",
+            "url": "/bodybuilder",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2023-05-21T10:33:49.450Z",
+            "modified": "2023-05-21T10:35:12.066Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\":1,\n  \"full_name\": \"Amin Ben Slimen\",\n  \"phone\":52789987\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "e490dbe8-c562-4806-806b-e9a4b307fbde",
+            "colId": "9d775716-61fe-4688-b047-7d17655a0fbd",
+            "containerId": "e060ff61-505c-47df-9517-83849f1301e9",
+            "name": "create",
+            "url": "/paiement",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2023-05-21T10:24:58.649Z",
+            "modified": "2023-05-21T10:25:45.178Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"amount\": 140,\n  \"bodybuilder\": 1\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "e22728df-16b2-4e60-965a-ed35d2a30d5c",
+            "colId": "9d775716-61fe-4688-b047-7d17655a0fbd",
+            "containerId": "e060ff61-505c-47df-9517-83849f1301e9",
+            "name": "get all",
+            "url": "",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2023-05-21T10:26:05.881Z",
+            "modified": "2023-05-21T10:26:05.881Z",
+            "headers": []
+        },
+        {
+            "_id": "c5e93f75-be26-4ffc-bc19-5839a489ea86",
+            "colId": "9d775716-61fe-4688-b047-7d17655a0fbd",
+            "containerId": "e060ff61-505c-47df-9517-83849f1301e9",
+            "name": "get all",
+            "url": "/paiement",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2023-05-21T10:26:17.369Z",
+            "modified": "2023-05-21T10:26:30.012Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "35c5be85-eb75-4692-8cb4-416c2fc8715f",
+            "colId": "9d775716-61fe-4688-b047-7d17655a0fbd",
+            "containerId": "e060ff61-505c-47df-9517-83849f1301e9",
+            "name": "get by bodybuilder",
+            "url": "/paiement?bodybuilder=1",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2023-05-21T10:29:29.113Z",
+            "modified": "2023-05-21T10:33:09.312Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "bodybuilder",
+                    "value": "1",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "acb2270d-5296-4a4c-857b-2780b45a4378",
+            "colId": "9d775716-61fe-4688-b047-7d17655a0fbd",
+            "containerId": "d41f9cb9-2f0a-4145-828c-011b405e13fa",
+            "name": "refresh token",
+            "url": "/auth/token/refresh",
+            "method": "POST",
+            "sortNum": 100000,
+            "created": "2023-05-21T10:39:07.217Z",
+            "modified": "2023-05-21T10:42:00.220Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY4NTE4Mjc2NywiaWF0IjoxNjg0NjY0MzY3LCJqdGkiOiJkZjI3ZTA5MGE2OTA0YWNlOTFlNzA1Njk2ZmMzNWJkYSIsInVzZXJfaWQiOjF9.2iOBUH3CxOMgtP17yoJElg8jjqmDAvNEfGcidxWL5Z4\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "0f6e5b72-6b25-46b7-ba52-6e1c2d34bdb6",
+            "colId": "9d775716-61fe-4688-b047-7d17655a0fbd",
+            "containerId": "d41f9cb9-2f0a-4145-828c-011b405e13fa",
+            "name": "verify token",
+            "url": "/auth/token/verify",
+            "method": "POST",
+            "sortNum": 110000,
+            "created": "2023-05-21T10:40:56.781Z",
+            "modified": "2023-05-21T10:41:56.112Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0ODM3MTY3LCJpYXQiOjE2ODQ2NjQzNjcsImp0aSI6ImM0ZTliNWI1YzE3YzQzOWZhN2I2NmZhZThlMzE4MWFmIiwidXNlcl9pZCI6MX0.K9fbVOdF-dBP5cImXJjohEQkkuqF1wTUUNs-Nt9Mvps\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ],
+    "settings": {
+        "auth": {
+            "type": "bearer",
+            "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0ODM4NTIwLCJpYXQiOjE2ODQ2NjQzNjcsImp0aSI6Ijc3NzQ0ZGNlZTM1MTQ3Mjc5MWU0ZjBmMjlmYjBhN2Y4IiwidXNlcl9pZCI6MX0.8plCqCZi37yqV1GykN9cmrq-FjWDZKlOrv1mODYpPEA"
+        },
+        "options": {
+            "baseUrl": "http://127.0.0.1:8000"
+        }
+    }
+}
