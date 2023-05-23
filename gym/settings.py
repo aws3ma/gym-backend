@@ -99,23 +99,38 @@ STORAGES = {
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+#         'NAME': 'gym',
+
+#         'USER': 'gym',
+
+#         'PASSWORD': 'gym',
+
+#         'HOST': 'localhost',
+
+#         'PORT': '5432',
+
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.mysql',
 
-        'NAME': 'gym',
+        'NAME': 'aminbenslimen$default',
 
-        'USER': 'gym',
+        'USER': 'aminbenslimen',
 
-        'PASSWORD': 'gym',
+        'PASSWORD': '#Ouss3ma',
 
-        'HOST': 'localhost',
+        'HOST': 'aminbenslimen.mysql.pythonanywhere-services.com',
 
-        'PORT': '5432',
+        'PORT': '3306',
 
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
