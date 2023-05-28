@@ -15,9 +15,9 @@ class BodyBuilderView(APIView):
         data = request.data
         data["user"] = request.user.id
         serializer = BodyBuilderSerializer(data=data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-        return Response(status=status.HTTP_201_CREATED)
+        if(serializer.is_valid(raise_exception=True)):
+            serializer.save()
+        return Response(data=serializer.data,status=status.HTTP_201_CREATED)
 
     def get(self, request):
         user_id = str(request.user.id)

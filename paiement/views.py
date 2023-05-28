@@ -17,7 +17,7 @@ class PaiementView(APIView):
         serializer = PaiementSerializer(data=data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return Response(status=status.HTTP_201_CREATED)
+        return Response(data=serializer.data,status=status.HTTP_201_CREATED)
 
     def get(self, request):
         user_id = str(request.user.id)
