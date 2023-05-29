@@ -4,8 +4,8 @@ from authentication.models import User
 
 
 class BodyBuilder(models.Model):
-    full_name = models.TextField(max_length=150,null=False)
-    phone = models.TextField(max_length=8,null=True)
+    full_name = models.CharField(max_length=150,null=False)
+    phone = models.CharField(max_length=8,null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     join_date = models.DateTimeField(auto_now_add=True, null=False)
     active = models.BooleanField(default=True)
