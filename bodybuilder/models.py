@@ -8,6 +8,7 @@ class BodyBuilder(models.Model):
     phone = models.TextField(max_length=8,null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     join_date = models.DateTimeField(auto_now_add=True, null=False)
+    active = models.BooleanField(default=True)
 
     def __str__(self) -> str:
         return self.full_name
