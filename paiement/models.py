@@ -10,8 +10,8 @@ class Paiement(models.Model):
     bodybuilder = models.ForeignKey(BodyBuilder, on_delete=models.CASCADE)
     start_date = models.DateField( null=False,default=date.today)
     due_date = models.DateField( null=False,default=date.today)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    # user = models.ForeignKey(User, on_delete=models.CASCADE)
     # paiement_date = models.DateTimeField(auto_now_add=True, null=False)
 
     def __str__(self) -> str:
-        return self.bodybuilder.full_name+" "+self.amount
+        return self.bodybuilder.full_name+" "+str(self.amount)

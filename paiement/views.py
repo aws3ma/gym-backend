@@ -25,7 +25,7 @@ class PaiementView(APIView):
         if "bodybuilder" in request.query_params.keys():
             bodybuilder_id = request.query_params["bodybuilder"]
         if bodybuilder_id == "0":
-            paiements = Paiement.objects.filter(user_id=user_id)
+            paiements = Paiement.objects.filter(bodybuilder__user=user_id)
         if bodybuilder_id != "0":
             paiements = Paiement.objects.filter(bodybuilder_id=bodybuilder_id)
         paiements = PaiementSerializer(paiements, many=True)
