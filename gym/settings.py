@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-t+xv!v29ha%039^l0yw!c_p_fw(g)p!c_jb8ox^=2u0a@3^q09'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 CORS_ORIGIN_ALLOW_ALL = True
@@ -99,38 +99,38 @@ STORAGES = {
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-
-#         'NAME': 'gym',
-
-#         'USER': 'gym',
-
-#         'PASSWORD': 'gym',
-
-#         'HOST': 'localhost',
-
-#         'PORT': '5432',
-
-#     }
-# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
 
-        'NAME': 'aminbenslimen$default',
+        'NAME': 'gym',
 
-        'USER': 'aminbenslimen',
+        'USER': 'gym',
 
-        'PASSWORD': '#Ouss3ma',
+        'PASSWORD': 'gym',
 
-        'HOST': 'aminbenslimen.mysql.pythonanywhere-services.com',
+        'HOST': 'localhost',
 
-        'PORT': '3306',
+        'PORT': '5432',
 
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+
+#         'NAME': 'aminbenslimen$default',
+
+#         'USER': 'aminbenslimen',
+
+#         'PASSWORD': '#Ouss3ma',
+
+#         'HOST': 'aminbenslimen.mysql.pythonanywhere-services.com',
+
+#         'PORT': '3306',
+
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
